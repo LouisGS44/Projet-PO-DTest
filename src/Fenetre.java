@@ -66,7 +66,7 @@ public class Fenetre extends JFrame implements ActionListener{
 	    		setSize(new Dimension(700, 370));
 	    	}
 	    });
-	    tp.add("Ajouter un patient ZIZI", onglet_Add_Patient);
+	    tp.add("Ajouter un patient Suppression ZIZI", onglet_Add_Patient);
 	    onglet_Add_Patient.setLayout(null);
 	    
 	    JLabel lbl_nom = new JLabel("Nom : ");

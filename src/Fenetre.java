@@ -119,7 +119,8 @@ public class Fenetre extends JFrame implements ActionListener{
 	    onglet_Statistiques.setLayout(null);
 	    
 	    lbl_moyenne = new JLabel("Resultat moyen :");
-	    lbl_moyenne.setBounds(91, 59, 433, 26);
+	    lbl_moyenne.setVerticalAlignment(SwingConstants.TOP);
+	    lbl_moyenne.setBounds(91, 35, 433, 457);
 	    onglet_Statistiques.add(lbl_moyenne);
 	    onglet_Test_Patient.setLayout(null);
 	    
@@ -412,7 +413,7 @@ public class Fenetre extends JFrame implements ActionListener{
 			
 			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
 			res.append("<br>");
-			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
+			res.append("Age moyen : " + ListePatient.calculerMoyenneAge());
 			
 			res.append("</html>");
 			lbl_moyenne.setText(res.toString());

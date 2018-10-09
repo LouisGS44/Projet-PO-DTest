@@ -300,6 +300,55 @@ public class ListePatient {
 			return 0;
 		}
 	}
+	
+	public static int calculerMoyenneAge(){
+		try {
+			if(listePatients.isEmpty()){
+				return 0;
+			}
+			int somme = 0;
+			double cpt = 0;
+			for (Individu individu : listePatients) {
+				if(individu.individuDepiste()){
+					DTest test_temp = individu.get_testDiabete();
+					somme += test_temp.get_age();
+					cpt += 1;
+				}
+			}
+			if(cpt == 0){
+				return 0;
+			}
+			return (int) (somme/cpt);
+			
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+	
+	public static String calculerResultatTrancheAge() {
+		
+		String res = "";
+		
+		try {
+			if(listePatients.isEmpty()){
+				return "";
+			}
+			
+			/*for (Individu individu : listePatients) {
+				if(individu.individuDepiste()){
+					DTest test_temp = individu.get_testDiabete();
+					somme += test_temp.get_age();
+					cpt += 1;
+				}
+			}*/
+			
+			return res;
+			
+		} catch (Exception e) {
+			return "";
+		}
+		
+	}
 
 }
 

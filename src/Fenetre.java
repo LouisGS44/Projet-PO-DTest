@@ -413,7 +413,14 @@ public class Fenetre extends JFrame implements ActionListener{
 			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
 			res.append("<br>");
 			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
-			
+			res.append("<br>");
+			res.append("Nombre d'homme :");
+			res.append("<br>");
+			res.append("	- " + ListePatient.calculerPopulation().nbHomme);
+			res.append("<br>");
+			res.append("Nombre de femme :");
+			res.append("<br>");
+			res.append("	- " + ListePatient.calculerPopulation().nbFemme);
 			res.append("</html>");
 			lbl_moyenne.setText(res.toString());
 		} catch (Exception e) {

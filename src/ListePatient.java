@@ -301,6 +301,40 @@ public class ListePatient {
 		}
 	}
 
+	public static class Population {
+		int nbHomme;
+		int nbFemme;
+
+		public Population(){
+		    this.nbHomme = 0;
+		    this.nbFemme = 0;
+        }
+
+        public void increaseH(){
+		    this.nbHomme ++;
+        }
+
+        public void increaseF(){
+		    this.nbFemme++;
+        }
+	}
+
+	public static Population calculerPopulation(){
+	    try{
+            Population mapop = new Population();
+            for (Individu pat : listePatients) {
+                if(pat.get_testDiabete().get_sexe() == DTest.Sexe.Homme){
+                    mapop.increaseH();
+                } else {
+                    mapop.increaseF();
+                }
+            }
+            return mapop;
+        } catch (Exception e){
+	        return new Population();
+        }
+	}
+
 }
 
 

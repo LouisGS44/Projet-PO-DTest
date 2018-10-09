@@ -21,6 +21,10 @@ import org.xml.sax.SAXException;
 
 import javafx.scene.DepthTest;
 
+
+/**
+ * Classe representant la liste des patients ajoutes à la BDD.
+ */
 public class ListePatient {
 	
 	private static ArrayList<Individu> listePatients = new ArrayList<Individu>();
@@ -28,7 +32,11 @@ public class ListePatient {
 	public static ArrayList<Individu> getListePatients(){
 		return listePatients;
 	}
-	
+
+
+    /**
+     * Charge la liste des patients a partir de la BDD (fichier XML)
+     */
 	public static void getPatientsFromFile() {
 		File file = new File("data/bdd.xml");
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -99,19 +107,35 @@ public class ListePatient {
 			e.printStackTrace();
 		}
 	}
-	
+
+    /**
+     * Methode d'ajout d'individu a la liste
+     * @param i L'individu a ajouter a liste de patients
+     */
 	public static void addPatient(Individu i) {
 		listePatients.add(i);
 	}
-	
+
+    /**
+     * Methode de suppression a la liste
+     * @param i L'individu a supprimer de la liste
+     */
 	public static void removePatient(Individu i) {
 		listePatients.remove(i);
 	}
 
+
+    /**
+     * @return La liste de patients
+     */
 	public static String listToString(){
 		return listePatients.toString();
 	}
-	
+
+    /**
+     * @param numSS ID du patient
+     * @return Si le patient dont l'ID passé en parametre appartient a la liste de patients.
+     */
 	public static boolean containsPatient(String numSS){
 		try {
 			for (Individu individu : listePatients) {
@@ -124,7 +148,10 @@ public class ListePatient {
 			return false;
 		}
 	}
-	
+
+    /**
+     * Permet de sauvegarder la liste de patients dans la BDD (fichier XML)
+     */
 	public static void writeXmlFile() {
 
 	    try {
@@ -238,7 +265,11 @@ public class ListePatient {
 	        System.out.println("Error building document");
 	    }
 	}
-	
+
+    /**
+     * @param numSS ID de l'individu
+     * @return L'individu identifié par l'ID
+     */
 	public static Individu getIndividuFromID(String numSS){
 		try {
 			for (Individu individu : listePatients) {
@@ -251,7 +282,11 @@ public class ListePatient {
 			return null;
 		}
 	}
-	
+
+
+    /**
+     * @param ID Identifiant du patient a supprimer
+     */
 	public static void supprPatientFromList(String ID){
 		try {
 			for (Individu individu : listePatients) {
@@ -264,7 +299,11 @@ public class ListePatient {
 			// TODO: handle exception
 		}
 	}
-	
+
+    /**
+     * @param ID Identifiant de l'individu
+     * @param test DTest a associer a l'individu
+     */
 	public static void attribuerTestIndividu(String ID, DTest test){
 		try {
 			for (Individu individu : listePatients) {
@@ -276,7 +315,10 @@ public class ListePatient {
 			System.out.println("Erreur D'attribution");
 		}
 	}
-	
+
+    /**
+     * @return Le resultat moyen
+     */
 	public static double calculerMoyenne(){
 		try {
 			if(listePatients.isEmpty()){

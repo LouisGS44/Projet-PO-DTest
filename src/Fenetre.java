@@ -407,9 +407,15 @@ public class Fenetre extends JFrame implements ActionListener{
 	
 	private void calculStats(){
 		try {
+			StringBuilder res = new StringBuilder();
+			res.append("<html>");
 			
-			lbl_moyenne.setText("Resultat moyen : " + ListePatient.calculerMoyenne());
+			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
+			res.append("<br>");
+			res.append("Resultat moyen : " + ListePatient.calculerMoyenne());
 			
+			res.append("</html>");
+			lbl_moyenne.setText(res.toString());
 		} catch (Exception e) {
 			msgError("calculStats", e.getMessage());
 		}
@@ -525,5 +531,4 @@ public class Fenetre extends JFrame implements ActionListener{
 			msgError("ouvrirInfo", e.getMessage());
 		}
 	}
-	
 }

@@ -108,7 +108,6 @@ public class ListePatient {
 		listePatients.remove(i);
 	}
 
-	
 	public static String listToString(){
 		return listePatients.toString();
 	}

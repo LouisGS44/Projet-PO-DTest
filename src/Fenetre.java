@@ -121,10 +121,6 @@ public class Fenetre extends JFrame implements ActionListener{
 	    lbl_moyenne = new JLabel("Resultat moyen :");
 	    lbl_moyenne.setBounds(91, 59, 433, 26);
 	    onglet_Statistiques.add(lbl_moyenne);
-	    
-	    JCheckBoxMenuItem chckbxmntmNewCheckItem = new JCheckBoxMenuItem("New check item");
-	    chckbxmntmNewCheckItem.setBounds(82, 182, 156, 19);
-	    onglet_Statistiques.add(chckbxmntmNewCheckItem);
 	    onglet_Test_Patient.setLayout(null);
 	    
 	    choice_Patient = new Choice();

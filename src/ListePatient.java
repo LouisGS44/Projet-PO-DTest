@@ -253,6 +253,7 @@ public class ListePatient {
                 StreamResult result = new StreamResult(fos);
                 aTransformer.transform(source, result);
 
+
             } catch (IOException e) {
 
                 e.printStackTrace();
